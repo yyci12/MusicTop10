@@ -11,7 +11,7 @@ import com.Music.Service.MemberService;
 
 
 @Controller
-@RequestMapping("/mylogin")
+@RequestMapping("/")
 public class LoginController {
 	
 	@Autowired 
