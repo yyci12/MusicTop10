@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
+import com.Music.Controller.LoginController;
 import com.Music.Dto.chat_room_Dto;
 
 @Mapper
@@ -18,5 +19,15 @@ public interface chat_room_Mapper {
 	
 	@Insert("insert into CHAT_ROOM values(NULL, #{artist_Name}, #{r_Contents})")
 	public int insert(chat_room_Dto dto);
-
+	
+	/*
+	//chat_room_in mapping
+	@Select("SELECT * FROM CHAT_ROOM_IN")
+	List <chat_room_in_Dto> select_chatList();
+	
+	public int R_N = LoginController.chat_room_No;
+	String sql = "insert into CHAT_ROOM_IN values(NULL,"+ R_N +", #{r_Contents})";
+	@Insert(sql)
+	public int insert(chat_room_in_Dto dto);
+	*/
 }

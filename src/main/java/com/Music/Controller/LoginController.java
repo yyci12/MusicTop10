@@ -3,6 +3,8 @@ package com.Music.Controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.Music.Crawling.Crawling;
 import com.Music.Dto.MemberDto;
 import com.Music.Dto.chat_room_Dto;
+import com.Music.Mapper.chat_room_Mapper;
 import com.Music.Service.MemberService;
 import com.Music.Service.chat_room_Service;
 
@@ -20,7 +23,7 @@ import com.Music.Service.chat_room_Service;
 @RequestMapping("/")
 public class LoginController {
 	
-	
+	public String chat_room_No;
 	@Autowired 
 	private MemberService service;
 	
@@ -75,7 +78,11 @@ public class LoginController {
 			return "redirect:chat";
 		}
 	}
-	
+	@GetMapping("/go_to_chat_room")
+	public String go_chatR(HttpServletRequest request) {
+		chat_room_No = request.getParameter("room_no");
+		return "chat_room";
+	}
 	@GetMapping("/input")
 	public String input(Model model,MemberDto dto) {
 		int res =0;
