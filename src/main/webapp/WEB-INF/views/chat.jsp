@@ -47,7 +47,8 @@
 						<c:forEach items="${list_1 }" var="dto">
 							<tr>
 								<td>${dto.cRoom_No }</td>
-								<td><button onclick = "location.href='go_to_chat_room?room_no=${dto.cRoom_No }'">입장</button></td>
+								<!-- go_to_chat_room?room_no=${dto.cRoom_No } -->
+								<td><button onclick = "location.href='mychatt'">입장</button></td>
 								<td>${dto.artist_Name }</td>
 								<td>${dto.r_Contents }</td>
 								

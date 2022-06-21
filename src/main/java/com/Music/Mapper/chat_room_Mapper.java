@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.Music.Controller.LoginController;
 import com.Music.Dto.chat_room_Dto;
+import com.Music.Dto.chat_room_in_Dto;
 
 @Mapper
 public interface chat_room_Mapper {
@@ -18,16 +19,16 @@ public interface chat_room_Mapper {
 	List <chat_room_Dto> select_CRList();
 	
 	@Insert("insert into CHAT_ROOM values(NULL, #{artist_Name}, #{r_Contents})")
-	public int insert(chat_room_Dto dto);
+	public int Insert(chat_room_Dto dto);
 	
-	/*
+	
 	//chat_room_in mapping
 	@Select("SELECT * FROM CHAT_ROOM_IN")
 	List <chat_room_in_Dto> select_chatList();
 	
-	public int R_N = LoginController.chat_room_No;
-	String sql = "insert into CHAT_ROOM_IN values(NULL,"+ R_N +", #{r_Contents})";
+	public String R_N = LoginController.chat_room_No;
+	static final String sql = "insert into CHAT_ROOM_IN values(NULL,"+ R_N +", #{r_Contents})";
 	@Insert(sql)
-	public int insert(chat_room_in_Dto dto);
-	*/
+	public int Insertchat_in(chat_room_in_Dto dto);
+	
 }

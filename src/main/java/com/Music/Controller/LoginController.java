@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.Music.Crawling.Crawling;
 import com.Music.Dto.MemberDto;
@@ -23,7 +24,7 @@ import com.Music.Service.chat_room_Service;
 @RequestMapping("/")
 public class LoginController {
 	
-	public String chat_room_No;
+	public static String chat_room_No;
 	@Autowired 
 	private MemberService service;
 	
@@ -78,11 +79,21 @@ public class LoginController {
 			return "redirect:chat";
 		}
 	}
+	
 	@GetMapping("/go_to_chat_room")
 	public String go_chatR(HttpServletRequest request) {
 		chat_room_No = request.getParameter("room_no");
 		return "chat_room";
 	}
+	
+	@GetMapping("/mychatt")
+	public ModelAndView chatt() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("chat_room");
+		return mv;
+	}
+	
+	
 	@GetMapping("/input")
 	public String input(Model model,MemberDto dto) {
 		int res =0;
