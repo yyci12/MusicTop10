@@ -18,6 +18,7 @@ public class Crawling {
 		ArrayList<String> listTitle = new ArrayList<>();
 		ArrayList<String> listName = new ArrayList<>();
 		ArrayList<String> listUrl = new ArrayList<>();
+		ArrayList<String> listAlbumTitle = new ArrayList<>();
 		ArrayList<String> listAlbumID = new ArrayList<>();
 
 		doc = Jsoup.connect(melon_chart_url).get();
@@ -25,10 +26,15 @@ public class Crawling {
 		final Elements rank_list_name = doc.select("div.wrap_song_info div.ellipsis.rank02 span a");
 
 		final Elements image_list1 = doc.select("tr#lst50.lst50 div.wrap a.image_typeAll img");
+		
+		
+		final Elements albumtitle_list = doc.select("tr#lst50.lst50 .wrap div.wrap_song_info div.rank03");
+		System.out.println(albumtitle_list.toString());
+		
 		// 앨범 아이디 추출하기
 		final Elements albumId_list_1 = doc.select("tr#lst50.lst50 div.wrap a.image_TypeAll");
-		System.out.println(rank_list1.toString());
 
+		
 		for (Element element : rank_list1) {
 			listTitle.add(element.text());
 		}
@@ -40,7 +46,10 @@ public class Crawling {
 		for (Element element : image_list1) {
 			listUrl.add(element.attr("src"));
 		}
-
+		for (Element element : albumtitle_list) {
+			String tmp = element.text();
+			listAlbumTitle.add(tmp);
+		}
 		for (Element element : albumId_list_1) {
 			// 앨범 아이디만 나올 수 있도록 문자열 추출 작업
 			// <a href="javascript:melon.link.goAlbumDetail('10427559');" 에서 href 속성만 떼어내기
@@ -60,16 +69,17 @@ public class Crawling {
 			MusicDto.setImg(listUrl.get(i)); // img_URL
 			MusicDto.setRank(String.valueOf(i + 1)); // 순위
 			MusicDto.setArtist(listName.get(i)); // 가수 이름
+			MusicDto.setAlbum(listAlbumTitle.get(i));
 			MusicDto.setDetail(listAlbumID.get(i)); // 디테일페이지 숫자
 			list.add(MusicDto);
 		}
+		/*
 		System.out.println(listTitle.get(1));
 		System.out.println(listUrl.get(1));
 		System.out.println(String.valueOf(1 + 1));
 		System.out.println(listName.get(1));
 		System.out.println(listAlbumID.get(1));
-		
-		System.out.println(list);
+		*/
 		return list;
 	}
 

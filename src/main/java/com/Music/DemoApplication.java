@@ -17,13 +17,5 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 	
-	@RequestMapping("/")
-	public String root(Model model) {
-		System.out.println("log: ");
-		Crawling list = new Crawling();
-		System.out.println("log: "+list);
-		model.addAttribute("list",list);
-		
-		return "index";
-	}
+
 }

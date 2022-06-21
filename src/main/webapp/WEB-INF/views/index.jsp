@@ -60,7 +60,7 @@
 											<td>${dto.rank }</td>
 											<td><img src="${dto.img }"> ${dto.title }</td>
 											<td>${dto.artist }</td>
-											<td></td>
+											<td>${dto.album }</td>
 											<td><a href="">&#128441;</a></td>
 										</tr>
 									</c:forEach>

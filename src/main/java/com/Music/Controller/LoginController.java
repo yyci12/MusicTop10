@@ -30,10 +30,8 @@ public class LoginController {
 	
 	@GetMapping("/")
 	public String root(Model model) {
-		System.out.println("log: ");
 		Crawling list = new Crawling();
 		try {
-			System.out.println("log: "+list.Crawling());
 			model.addAttribute("list",list.Crawling());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
