@@ -27,8 +27,7 @@ public interface chat_room_Mapper {
 	List <chat_room_in_Dto> select_chatList();
 	
 	public String R_N = LoginController.chat_room_No;
-	static final String sql = "insert into CHAT_ROOM_IN values(NULL,"+ R_N +", #{r_Contents})";
-	@Insert(sql)
+	@Insert("insert into CHAT_ROOM_IN values(NULL, #R_N# , #{r_Contents})")
 	public int Insertchat_in(chat_room_in_Dto dto);
 	
 }
