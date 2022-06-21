@@ -42,5 +42,4 @@ public class chat_room_Dto {
 		this.r_Contents = r_Contents;
 	}
 	
-	
 }
