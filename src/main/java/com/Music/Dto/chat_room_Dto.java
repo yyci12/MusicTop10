@@ -1,6 +1,8 @@
 package com.Music.Dto;
 
 public class chat_room_Dto {
+	
+	//dto, sql value getter&setter
 	private int cRoom_No;
 	private String artist_Name;
 	private String r_Contents;

@@ -11,6 +11,7 @@ import com.Music.Mapper.chat_room_Mapper;
 @Service
 public class chat_room_ServiceImpl implements chat_room_Service{
 
+	//serviceImplements
 	@Autowired
 	private chat_room_Mapper chat_room_mapper ;
 	

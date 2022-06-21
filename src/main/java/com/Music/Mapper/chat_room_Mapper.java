@@ -12,6 +12,7 @@ import com.Music.Dto.chat_room_Dto;
 
 @Mapper
 public interface chat_room_Mapper {
+	//sql and mapping
 	@Select("SELECT * FROM CHAT_ROOM") 
 	List <chat_room_Dto> select_CRList();
 	

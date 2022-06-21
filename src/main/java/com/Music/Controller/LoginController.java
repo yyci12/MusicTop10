@@ -22,6 +22,7 @@ public class LoginController {
 	@Autowired 
 	private MemberService service;
 	
+	//autowired chat service
 	@Autowired
 	private chat_room_Service cR_service;
 	
@@ -33,18 +34,21 @@ public class LoginController {
 	public String mypage() {
 		return "mypage";
 	}
+	//go chat page
 	@GetMapping("/chat")
 	public String chatpage(Model model) {
 		List<chat_room_Dto> list = cR_service.select_CRList();
 		model.addAttribute("list_1",list);
 		return "chat";
 	}
+	//go chat_room_open page
 	@GetMapping("/chat_room_open")
 	public String chatopen() {
 		
 		return "chat_room_open";
 	}
-	@GetMapping("/chat_room_make")
+	//chat room make form get
+	@GetMapping("chat_room_make")
 	public String chatR_insert(chat_room_Dto dto) {
 		int res = 0;
 		res = cR_service.Insert(dto);
