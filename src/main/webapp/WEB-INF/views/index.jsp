@@ -28,7 +28,8 @@
 				<button>youtube</button>
 				<header class="sectionTitle">
 					<div class="info">
-						<h1>곡 차트</h1><strong>실시간</strong>
+						<h1>곡 차트</h1>
+						<strong>실시간</strong>
 						<time datetime="2022.06.21 09:00">
 							2022.06.21&nbsp;&nbsp;<span>09:00</span>
 						</time>
@@ -36,7 +37,10 @@
 				</header>
 			</div>
 		</div>
-
+		<div class="temp">
+			<li><a href="/mypage">마이페이지</a></li>
+			<li><a href="/chat">채팅방</a></li>
+		</div>
 
 		<footer class="section"> </footer>
 	</div>

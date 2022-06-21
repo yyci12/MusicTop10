@@ -19,8 +19,15 @@ public class LoginController {
 	
 	@GetMapping("/inputform")
 	public String inputform() {
-		
 		return "inputform";
+	}
+	@GetMapping("/mypage")
+	public String mypage() {
+		return "mypage";
+	}
+	@GetMapping("/chat")
+	public String chatpage() {
+		return "chat";
 	}
 	
 	@GetMapping("/input")
