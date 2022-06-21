@@ -61,7 +61,10 @@
 											<td><img src="${dto.img }"> ${dto.title }</td>
 											<td>${dto.artist }</td>
 											<td>${dto.album }</td>
-											<td><a href="">&#128441;</a></td>
+											<td>
+											<a href="https://search.naver.com/search.naver?
+											where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">
+											&#128441;</a></td>
 										</tr>
 									</c:forEach>
 								</c:otherwise>
