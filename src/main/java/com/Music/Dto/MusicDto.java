@@ -1,6 +1,6 @@
 package com.Music.Dto;
 
-public class MusicSoup {
+public class MusicDto {
 	private	String rank;
 	private String Title;
 	private String Artist;
@@ -8,12 +8,12 @@ public class MusicSoup {
 	private String Detail;
 	private String Img;
 	
-	public MusicSoup() {
+	public MusicDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public MusicSoup(String rank, String title, String artist, String album, String detail, String img) {
+	public MusicDto(String rank, String title, String artist, String album, String detail, String img) {
 		super();
 		this.rank = rank;
 		Title = title;

@@ -9,10 +9,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.Music.Dto.MusicSoup;
+import com.Music.Dto.MusicDto;
 
 public class Crawling {
-	public List<MusicSoup> Crawling() throws IOException {
+	public List<MusicDto> Crawling() throws IOException {
 		String melon_chart_url = "https://www.melon.com/chart/";
 		Document doc;
 		ArrayList<String> listTitle = new ArrayList<>();
@@ -22,19 +22,17 @@ public class Crawling {
 		ArrayList<String> listAlbumID = new ArrayList<>();
 
 		doc = Jsoup.connect(melon_chart_url).get();
+
 		final Elements rank_list1 = doc.select("div.wrap_song_info div.ellipsis.rank01 span a");
 		final Elements rank_list_name = doc.select("div.wrap_song_info div.ellipsis.rank02 span a");
 
 		final Elements image_list1 = doc.select("tr#lst50.lst50 div.wrap a.image_typeAll img");
-		
-		
+
 		final Elements albumtitle_list = doc.select("tr#lst50.lst50 .wrap div.wrap_song_info div.rank03");
-		System.out.println(albumtitle_list.toString());
-		
+
 		// 앨범 아이디 추출하기
 		final Elements albumId_list_1 = doc.select("tr#lst50.lst50 div.wrap a.image_TypeAll");
 
-		
 		for (Element element : rank_list1) {
 			listTitle.add(element.text());
 		}
@@ -62,9 +60,9 @@ public class Crawling {
 			// 앨범 아이디만 리스트에 추가
 			listAlbumID.add(result);
 		}
-		List<MusicSoup> list = new ArrayList<MusicSoup>();
+		List<MusicDto> list = new ArrayList<MusicDto>();
 		for (int i = 0; i < 50; i++) {
-			MusicSoup MusicDto = new MusicSoup();
+			MusicDto MusicDto = new MusicDto();
 			MusicDto.setTitle(listTitle.get(i)); // 곡이름
 			MusicDto.setImg(listUrl.get(i)); // img_URL
 			MusicDto.setRank(String.valueOf(i + 1)); // 순위
@@ -74,13 +72,61 @@ public class Crawling {
 			list.add(MusicDto);
 		}
 		/*
-		System.out.println(listTitle.get(1));
-		System.out.println(listUrl.get(1));
-		System.out.println(String.valueOf(1 + 1));
-		System.out.println(listName.get(1));
-		System.out.println(listAlbumID.get(1));
-		*/
+		 * System.out.println(listTitle.get(1)); System.out.println(listUrl.get(1));
+		 * System.out.println(String.valueOf(1 + 1));
+		 * System.out.println(listName.get(1)); System.out.println(listAlbumID.get(1));
+		 */
 		return list;
 	}
 
+	public List<MusicDto> Crawling2() throws IOException {
+		String melon_chart_url = "https://www.melon.com/new/";
+		Document doc;
+		ArrayList<String> listTitle = new ArrayList<>();
+		ArrayList<String> listArtist = new ArrayList<>();
+		ArrayList<String> listImage = new ArrayList<>();
+
+			doc = Jsoup.connect(melon_chart_url).get();
+			final Elements Title = doc.select("div.wrap_song_info div.ellipsis.rank01 span a");
+
+			final Elements Artist = doc.select("div.wrap_song_info div.ellipsis.rank02 span a");
+
+			final Elements image = doc.select("a.image_typeAll img");
+			
+			// 가수정보
+			for (Element element : Artist) {
+				listArtist.add(element.text());
+			}
+			System.out.println();
+			for (Element element : Title) {
+				listTitle.add(element.text());
+			}
+			System.out.println();
+			// 이미지정보
+			for (Element element : image) {
+				System.out.print(element.attr("src"));
+				listImage.add(element.attr("src"));
+			}
+			
+			
+			List<MusicDto> list = new ArrayList<MusicDto>();
+			for (int i = 0; i < 15; i++) {
+				MusicDto BannerDto = new MusicDto();
+				
+				BannerDto.setTitle(listTitle.get(i)); // 곡이름
+				BannerDto.setImg(listImage.get(i)); // img_URL
+				BannerDto.setArtist(listArtist.get(i)); // 가수 이름
+				
+				list.add(BannerDto);
+			}
+			
+		
+
+		/*
+		 * System.out.println(listTitle.get(1)); System.out.println(listUrl.get(1));
+		 * System.out.println(listAlbumID.get(1));
+		 */
+
+		return list;
+	}
 }
