@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.chatroompage{
+	margin: auto; 
+	width: 60%;
+	text-align: center;
+}
+
+.myfavoriteArtist_container{
+	background:green;
+	border-bottom: solid 2px gray;
+}

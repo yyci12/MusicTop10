@@ -5,8 +5,14 @@ header{
 }
 
 header .section{
-	
+	background-color : green;
+}
+.header_section{
+	display : flex;
 }
 footer{
+	
+}
+footer .section{
 	
 }

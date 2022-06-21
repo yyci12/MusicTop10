@@ -12,7 +12,7 @@
 	<div class="page">
 		<header class="section">
 			<h1>
-				<a href="/" style="background: purple;">메인</a>
+				<a href="/" >메인</a>
 			</h1>
 		</header>
 
