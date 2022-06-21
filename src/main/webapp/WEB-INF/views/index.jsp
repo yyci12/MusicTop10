@@ -42,6 +42,9 @@
 			<li><a href="/chat">채팅방</a></li>
 		</div>
 
+
+
+123
 		<footer class="section"> </footer>
 	</div>
 </body>
