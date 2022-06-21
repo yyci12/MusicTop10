@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -12,7 +13,7 @@
 	<div class="page">
 		<header class="section">
 			<h1>
-				<a href="/" >메인</a>
+				<a href="/">메인</a>
 			</h1>
 		</header>
 
@@ -34,6 +35,38 @@
 						<time datetime="2022.06.21 09:00">
 							2022.06.21&nbsp;&nbsp;<span>09:00</span>
 						</time>
+						<table border="1">
+							<col width="50">
+							<col width="100">
+							<col width="200">
+							<col width="100">
+							<col width="100">
+							<tr>
+								<th>RANK</th>
+								<th>TITLE</th>
+								<th>ARTIST</th>
+								<th>ALBUM</th>
+								<th>DETAIL</th>
+							</tr>
+							<c:choose>
+								<c:when test="${empty list }">
+									<tr>
+										<td colspan="5">----차트 불러오기 실패----</td>
+									</tr>
+								</c:when>
+								<c:otherwise>
+									<c:forEach items="${list }" var="dto">
+										<tr>
+											<td>${dto.rank }</td>
+											<td><img src="${dto.img }"> ${dto.title }</td>
+											<td>${dto.artist }</td>
+											<td></td>
+											<td><a href="">&#128441;</a></td>
+										</tr>
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
+						</table>
 					</div>
 				</header>
 			</div>

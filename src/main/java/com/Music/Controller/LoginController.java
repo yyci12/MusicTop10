@@ -1,5 +1,6 @@
 package com.Music.Controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.Music.Crawling.Crawling;
 import com.Music.Dto.MemberDto;
 import com.Music.Dto.chat_room_Dto;
 import com.Music.Service.MemberService;
@@ -25,6 +27,21 @@ public class LoginController {
 	//autowired chat service
 	@Autowired
 	private chat_room_Service cR_service;
+	
+	@GetMapping("/")
+	public String root(Model model) {
+		System.out.println("log: ");
+		Crawling list = new Crawling();
+		try {
+			System.out.println("log: "+list.Crawling());
+			model.addAttribute("list",list.Crawling());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return "index";
+	}
 	
 	@GetMapping("/inputform")
 	public String inputform() {

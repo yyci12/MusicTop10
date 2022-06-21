@@ -1,61 +1,75 @@
 package com.Music.Dto;
 
 public class MusicSoup {
-	private	int rank;
-	private String name;
+	private	String rank;
+	private String Title;
 	private String Artist;
 	private String Album;
-	private String Detail_url;
-	private String Img_Url;
+	private String Detail;
+	private String Img;
 	
 	public MusicSoup() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public MusicSoup(int rank, String name, String artist, String album, String detail_url, String img_Url) {
+
+	public MusicSoup(String rank, String title, String artist, String album, String detail, String img) {
 		super();
 		this.rank = rank;
-		this.name = name;
+		Title = title;
 		Artist = artist;
 		Album = album;
-		Detail_url = detail_url;
-		Img_Url = img_Url;
+		Detail = detail;
+		Img = img;
 	}
-	public int getRank() {
+
+	public String getRank() {
 		return rank;
 	}
-	public void setRank(int rank) {
+
+	public void setRank(String rank) {
 		this.rank = rank;
 	}
-	public String getName() {
-		return name;
+
+	public String getTitle() {
+		return Title;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setTitle(String title) {
+		Title = title;
 	}
+
 	public String getArtist() {
 		return Artist;
 	}
+
 	public void setArtist(String artist) {
 		Artist = artist;
 	}
+
 	public String getAlbum() {
 		return Album;
 	}
+
 	public void setAlbum(String album) {
 		Album = album;
 	}
-	public String getDetail_url() {
-		return Detail_url;
+
+	public String getDetail() {
+		return Detail;
 	}
-	public void setDetail_url(String detail_url) {
-		Detail_url = detail_url;
+
+	public void setDetail(String detail) {
+		Detail = detail;
 	}
-	public String getImg_Url() {
-		return Img_Url;
+
+	public String getImg() {
+		return Img;
 	}
-	public void setImg_Url(String img_Url) {
-		Img_Url = img_Url;
+
+	public void setImg(String img) {
+		Img = img;
 	}
-	
+
+
 }
