@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="StyleSheet" href="css/StyleSheet.css" type="text/css">
+<link rel="StyleSheet" href="css/header_footer.css" type="text/css">
 </head>
 <body class="body_container">
 	<div class="page">
