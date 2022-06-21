@@ -15,3 +15,6 @@ div .chart{
 	width: 60%;
 	text-align: center;
 }
+.Bottom button {
+	float: left;
+}
