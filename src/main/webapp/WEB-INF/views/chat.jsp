@@ -28,13 +28,14 @@
 		<div class="chat_room_container">
 			<table border="1">
 				<col width="50">
-				<col width="100">
 				<col width="200">
+				<col width="150">
 				<col width="100">
 				<tr>
-					<th>croom_no</th>
-					<th>artistname</th>
-					<th>contents</th>
+					<th>번호</th>
+					<th>채팅방 입장</th>
+					<th>아티스트 이름</th>
+					<th>방 설명</th>
 				</tr>
 				<c:choose>
 					<c:when test="${empty list_1 }">
@@ -46,15 +47,17 @@
 						<c:forEach items="${list_1 }" var="dto">
 							<tr>
 								<td>${dto.cRoom_No }</td>
+								<td><button class = "go_to_chat">입장</button></td>
 								<td>${dto.artist_Name }</td>
 								<td>${dto.r_Contents }</td>
+								
 							</tr>
 						</c:forEach>
 					</c:otherwise>
 				</c:choose>
 				<tr>
-					<td colspan="4"><input type="button" value="글작성"
-						onclick="location.href='./insertform'"></td>
+					<td colspan="4"><input type="button" value="채팅방만들기"
+						onclick="location.href='chat_room_open'"></td>
 				</tr>
 			</table>
 		</div>

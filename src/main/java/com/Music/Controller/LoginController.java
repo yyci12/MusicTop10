@@ -39,6 +39,23 @@ public class LoginController {
 		model.addAttribute("list_1",list);
 		return "chat";
 	}
+	@GetMapping("/chat_room_open")
+	public String chatopen() {
+		
+		return "chat_room_open";
+	}
+	@GetMapping("/chat_room_make")
+	public String chatR_insert(chat_room_Dto dto) {
+		int res = 0;
+		res = cR_service.Insert(dto);
+		
+		if(res>0) {
+			return "redirect:chat";
+		}
+		else {
+			return "redirect:chat";
+		}
+	}
 	
 	@GetMapping("/input")
 	public String input(Model model,MemberDto dto) {
