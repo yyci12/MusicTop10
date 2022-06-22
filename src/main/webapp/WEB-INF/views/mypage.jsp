@@ -21,6 +21,7 @@
 			<div class="header_menu">
 			<c:if test = "${session == 1}">
 			<button onclick = "location.href='/chat'">Chatting</button>
+			<button onclick = "location.href='/logout'">logout</button>
 			</c:if>
 			</div>
 		</header>
