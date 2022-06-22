@@ -15,7 +15,7 @@
 	$(document).ready(function() {
 		$('.chart_Table_bugs').attr('style', "display:none;");
 		$('.chart_Table_genie').attr('style', "display:none;");
-		
+
 		$('#melon').click(function() {
 			$('.chart_Table_melon').show();
 			$('.chart_Table_bugs').hide();
@@ -27,7 +27,7 @@
 			$('.chart_Table_bugs').show();
 			$('.chart_Table_genie').hide();
 		});
-		
+
 		$('#genie').click(function() {
 			$('.chart_Table_melon').hide();
 			$('.chart_Table_bugs').hide();
@@ -39,7 +39,7 @@
 <body class="body_container">
 	<div class="page">
 		<header class="section">
-				<a href="/"><img src="img/logo.png"></a>
+			<a href="/"><img src="img/logo.png"></a>
 		</header>
 
 		<div class="chart">
@@ -47,7 +47,7 @@
 				<table class="TOP_Table">
 					<col width="200">
 					<col width="200">
-					<col width="200">
+					<col width="300">
 					<col width="200">
 					<col width="200">
 					<col width="200">
@@ -64,13 +64,17 @@
 
 								<c:choose>
 									<c:when test="${index == 5}">
-										<td><img src="${dto.img }"><br> ${fn: substring(dto.title, 0 ,15) }<br>
-											<b>${dto.artist }</b><br></td>
+										<td><a
+											href="https://www.melon.com/search/total/index.htm?q=${dto.title }"><img
+												src="${dto.img }"><br> ${fn: substring(dto.title, 0 ,15) }<br>
+												<b>${dto.artist }</b></a><br></td>
 										<tr></tr>
 									</c:when>
 									<c:otherwise>
-										<td><img src="${dto.img }"><br> ${fn: substring(dto.title, 0 ,15) }<br>
-											<b>${dto.artist }</b><br></td>
+										<td><a
+											href="https://www.melon.com/search/total/index.htm?q=${dto.title }"><img
+												src="${dto.img }"><br> ${fn: substring(dto.title, 0 ,15) }<br>
+												<b>${dto.artist }</b><br></a></td>
 									</c:otherwise>
 								</c:choose>
 							</c:forEach>
@@ -89,9 +93,11 @@
 					<div class="info">
 						<h1>곡 차트</h1>
 						<strong>실시간</strong>
-						<time datetime="2022.06.21 09:00">
-							2022.06.21&nbsp;&nbsp;<span>09:00</span>
-						</time>
+						<br><br>
+								<script>
+									const date = new Date();
+									document.write(date.toLocaleString('ko-kr'));
+								</script>
 						<table class="chart_Table_melon">
 							<col width="50">
 							<col width="200">
@@ -108,18 +114,22 @@
 									<c:forEach begin="0" end="9" items="${list }" var="dto">
 										<tr>
 											<td>${dto.rank }</td>
-											<td>
-											<a href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
-											<img src="${dto.img }"></a><br> ${dto.title }</td>
-											<td><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
-											<td><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
-											<td><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
+											<td><a
+												href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
+													<img src="${dto.img }">
+											</a><br> ${dto.title }</td>
+											<td><a
+												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
+											<td><a
+												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
+											<td><a
+												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
 										</tr>
 									</c:forEach>
 								</c:otherwise>
 							</c:choose>
 						</table>
-						
+
 						<table class="chart_Table_bugs">
 							<col width="50">
 							<col width="200">
@@ -136,18 +146,22 @@
 									<c:forEach begin="0" end="9" items="${bugs }" var="dto">
 										<tr>
 											<td>${dto.rank }</td>
-											<td>
-											<a href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
-											<img src="${dto.img }"></a><br> ${dto.title }</td>
-											<td><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
-											<td><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
-											<td><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
+											<td><a
+												href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
+													<img src="${dto.img }">
+											</a><br> ${dto.title }</td>
+											<td><a
+												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
+											<td><a
+												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
+											<td><a
+												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
 										</tr>
 									</c:forEach>
 								</c:otherwise>
 							</c:choose>
 						</table>
-						
+
 						<table class="chart_Table_genie">
 							<col width="50">
 							<col width="200">
@@ -164,12 +178,16 @@
 									<c:forEach begin="0" end="9" items="${genie }" var="dto">
 										<tr>
 											<td>${dto.rank }</td>
-											<td>
-											<a href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
-											<img src="${dto.img }"></a><br> ${dto.title }</td>
-											<td><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
-											<td><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
-											<td><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
+											<td><a
+												href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
+													<img src="${dto.img }">
+											</a><br> ${dto.title }</td>
+											<td><a
+												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
+											<td><a
+												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
+											<td><a
+												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
 										</tr>
 									</c:forEach>
 								</c:otherwise>

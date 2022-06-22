@@ -94,7 +94,8 @@ public class Crawling {
 		final Elements Artist = doc.select("div.wrap_song_info div.ellipsis.rank02 span a");
 
 		final Elements image = doc.select("a.image_typeAll img");
-
+		
+		
 		// 가수정보
 		for (Element element : Artist) {
 			listArtist.add(element.text());
@@ -140,12 +141,11 @@ public class Crawling {
 
 		doc = Jsoup.connect(bugs_chart_url).get();
 		final Elements RankNo = doc.select("div.ranking");
-		// System.out.println(RankNo);
 		final Elements image = doc.select(".thumbnail img");
 		final Elements Title = doc.select(".byChart .title a");
 		final Elements Artist = doc.select(".left .artist");
 		final Elements Album = doc.select(".left .album");
-		//System.out.println(detail);
+
 
 		///////////////////////////////////리스트에 저장///////////////////////////////////////
 		
@@ -164,7 +164,6 @@ public class Crawling {
 			//이미지가 너무 작으니까 리사이징을 해보자
 			String tmp = element.attr("src");
 			String rep = tmp.replace("/images/50/", "/images/120/");
-			System.out.println(rep);
 			listImage.add(rep);
 		}
 		// 아티스트 정보
@@ -276,4 +275,5 @@ public class Crawling {
 
 		return list;
 	}
+
 }
