@@ -103,6 +103,8 @@
 		<div class="temp">
 			<li><a href="/mypage">마이페이지</a></li>
 			<li><a href="/chat">채팅방</a></li>
+			<li><a href="/login">로그인</a></li>
+			<li><a href="/sign_up">회원가입</a></li>
 		</div>
 
 
