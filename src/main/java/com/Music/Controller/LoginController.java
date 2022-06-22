@@ -89,13 +89,15 @@ public class LoginController {
 	}
 
 	@GetMapping("/Withdrawal")
-	public String Withdrawal() {
-
-
-		if(loginsession == 1) {
-		return "mypage";
+	public String Withdrawal(MemberDto dto) {
+		dto.setUser_Id(id);
+		member_service.Delete_Member(dto);
+		if(loginsession == 0) {
+			return "redirect:/";
 		}else {
-			return "/";
+			loginsession = 0;
+			id = null;
+			return "redirect:/";
 		}
 	}
 
