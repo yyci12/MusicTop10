@@ -8,6 +8,7 @@ public class MusicDto {
 	private String Detail;
 	private String Img;
 	
+	
 	public MusicDto() {
 		super();
 		// TODO Auto-generated constructor stub
