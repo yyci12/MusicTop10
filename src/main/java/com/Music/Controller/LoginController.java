@@ -26,7 +26,7 @@ public class LoginController {
 	
 	public static String chat_room_No;
 	@Autowired 
-	private MemberService service;
+	private MemberService member_service;
 	
 	//autowired chat service
 	@Autowired
@@ -116,17 +116,18 @@ public class LoginController {
 		return "sign_up";
 	}
 	
-	@GetMapping("/input")
-	public String input(Model model,MemberDto dto) {
-		int res =0;
-		res =service.insert(dto);
-		
+	@GetMapping("sign_up_form")
+	public String sign_up_form(MemberDto dto) {
+		int res = 0;
+		res = member_service.insert_Member(dto);
+		System.out.println("sign_up_log");
 		if(res>0) {
-			model.addAttribute("dto",service.selectList());
-			return "output";
-		}else {
-			return "input";
+			return "redirect:index";
+		}
+		else {
+			return "redirect:index";
 		}
 	}
+	
 	
 }

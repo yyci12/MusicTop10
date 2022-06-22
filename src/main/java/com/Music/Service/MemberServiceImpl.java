@@ -20,16 +20,11 @@ public class MemberServiceImpl implements MemberService{
 		return mapper.selectList();
 	}
 
+	
 	@Override
-	public MemberDto selectOne(int myno) {
+	public int insert_Member(MemberDto dto) {
 		// TODO Auto-generated method stub
-		return mapper.selectOne(myno);
-	}
-
-	@Override
-	public int insert(MemberDto dto) {
-		// TODO Auto-generated method stub
-		return mapper.insert(dto);
+		return mapper.insert_Member(dto);
 	}
 
 }

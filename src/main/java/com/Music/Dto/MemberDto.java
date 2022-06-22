@@ -1,37 +1,47 @@
 package com.Music.Dto;
 
 public class MemberDto {
-	private String name;
-	private int age;
-	private String Addr;
+	
+	private int user_No;
+	private String user_Id;
+	private String user_Pw;
+	private String user_Em;
 	public MemberDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public MemberDto(String name, int age, String addr) {
+	public MemberDto(int user_No,String user_Id,String user_Pw,String user_Em) {
 		super();
-		this.name = name;
-		this.age = age;
-		Addr = addr;
+		this.user_No = user_No;
+		this.user_Id = user_Id;
+		this.user_Pw = user_Pw;
+		this.user_Em = user_Em;
 	}
-	public String getName() {
-		return name;
+	public int getUser_No() {
+		return user_No;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUser_No(int user_No) {
+		this.user_No = user_No;
 	}
-	public int getAge() {
-		return age;
+	public String getUser_Id() {
+		return user_Id;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setUser_Id(String user_Id) {
+		this.user_Id = user_Id;
 	}
-	public String getAddr() {
-		return Addr;
+	public String getUser_Pw() {
+		return user_Pw;
 	}
-	public void setAddr(String addr) {
-		Addr = addr;
+	public void setUser_Pw(String user_Pw) {
+		this.user_Pw = user_Pw;
 	}
+	public String getUser_Em() {
+		return user_Em;
+	}
+	public void setUser_Em(String user_Em) {
+		this.user_Em = user_Em;
+	}
+	
 	
 	
 }

@@ -28,18 +28,18 @@
 <div class="container right-panel-active">
   <!-- Sign Up -->
   <div class="container__form container--signup">
-    <form action="#" class="form" id="form1">
+    <form action="sign_up_form" class="form" id="form1" method="get">
       <h2 class="form__title">Sign Up</h2>
-      <input type="text" placeholder="User" class="input" />
-      <input type="email" placeholder="Email" class="input" />
-      <input type="password" placeholder="Password" class="input" />
-      <button class="btn">Sign Up</button>
+      <input name="user_Id" type="text" placeholder="Id" class="input" />
+      <input name="user_Em" type="email" placeholder="Email" class="input" />
+      <input name="user_Pw" type="password" placeholder="Password" class="input" />
+      <button onclick="location.href='sign_up_form'"class="btn">Sign Up</button>
     </form>
   </div>
 
   <!-- Sign In -->
   <div class="container__form container--signin">
-    <form action="#" class="form" id="form2">
+    <form action="login" class="form" id="form2">
       <h2 class="form__title">Sign In</h2>
       <input type="email" placeholder="Email" class="input" />
       <input type="password" placeholder="Password" class="input" />

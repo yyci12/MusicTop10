@@ -14,10 +14,7 @@ public interface MemberMapper {
 	@Select("SELECT * FROM USER_TABLE") 
 	List <MemberDto> selectList();
 	
-	@Select("SELECT * FROM USER_TABLE WHERE NAME= #{name}")
-	MemberDto selectOne(int myno);
-	
-	@Insert("INSERT INTO USER_TABLE VALUES(#{name},#{age},#{addr})")
-	int insert(MemberDto dto);
+	@Insert("INSERT INTO USER_TABLE VALUES(null, #{user_Id},#{user_Pw},#{user_Em})")
+	int insert_Member(MemberDto dto);
 
 }
