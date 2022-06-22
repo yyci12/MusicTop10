@@ -17,10 +17,6 @@
 	<header class="section">
 		<a href="/"><img src="img/logo.png"></a>
 		<div class="header_menu">
-			<button onclick="location.href='/chat'">Chatting</button>
-			<button onclick="location.href='/mypage'">Mypage</button>
-			<button onclick="location.href='/login'">Login</button>
-			<button onclick="location.href='/sign_up'">Sign Up</button>
 		</div>
 	</header>
 	
@@ -28,21 +24,21 @@
 <div class="container right-panel-active">
   <!-- Sign Up -->
   <div class="container__form container--signup">
-    <form action="sign_up_form" class="form" id="form1" method="get">
+    <form action="/sign_up_form" class="form" id="form1" method="post">
       <h2 class="form__title">Sign Up</h2>
       <input name="user_Id" type="text" placeholder="Id" class="input" />
       <input name="user_Em" type="email" placeholder="Email" class="input" />
       <input name="user_Pw" type="password" placeholder="Password" class="input" />
-      <button onclick="location.href='sign_up_form'"class="btn">Sign Up</button>
+      <button type="submit"class="btn">Sign Up</button>
     </form>
   </div>
 
   <!-- Sign In -->
   <div class="container__form container--signin">
-    <form action="login" class="form" id="form2">
+    <form action="login_form" class="form" id="form2" method="post">
       <h2 class="form__title">Sign In</h2>
-      <input type="email" placeholder="Email" class="input" />
-      <input type="password" placeholder="Password" class="input" />
+      <input name="user_Em" type="email" placeholder="Email" class="input" />
+      <input name="user_Pw" type="password" placeholder="Password" class="input" />
       <a href="#" class="link">Forgot your password?</a>
       <button class="btn">Sign In</button>
     </form>

@@ -6,7 +6,7 @@ import com.Music.Dto.MemberDto;
 
 public interface MemberService {
 	
-	public List<MemberDto> selectList();
+	public List<MemberDto> selectList(MemberDto dto);
 	
 	public int insert_Member(MemberDto dto);
 }

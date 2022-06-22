@@ -40,9 +40,4 @@ public class chat_room_ServiceImpl implements chat_room_Service{
 		// TODO Auto-generated method stub
 		return chat_room_mapper.select_chatList();
 	}
-	@Override
-	public int Insertchat_in(chat_room_in_Dto dto) {
-		// TODO Auto-generated method stub
-		return chat_room_mapper.Insertchat_in(dto);
-	}
 }

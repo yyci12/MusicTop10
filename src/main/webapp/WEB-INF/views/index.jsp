@@ -43,8 +43,7 @@
 			<div class="header_menu">
 			<button onclick = "location.href='/chat'">Chatting</button>
 			<button onclick = "location.href='/mypage'">Mypage</button>
-			<button onclick = "location.href='/login'">Login</button>
-			<button onclick = "location.href='/sign_up'">Sign Up</button>
+			<button onclick = "location.href='/sign_up'">Sign In / Sign Up</button>
 			</div>
 		</header>
 

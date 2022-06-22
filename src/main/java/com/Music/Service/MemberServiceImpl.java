@@ -15,9 +15,9 @@ public class MemberServiceImpl implements MemberService{
 	MemberMapper mapper ;
 	
 	@Override
-	public List<MemberDto> selectList() {
+	public List<MemberDto> selectList(MemberDto dto) {
 		// TODO Auto-generated method stub
-		return mapper.selectList();
+		return mapper.selectList(dto);
 	}
 
 	

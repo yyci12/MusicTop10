@@ -33,8 +33,4 @@ public interface chat_room_Mapper {
 	
 	
 	
-	public String R_N = LoginController.chat_room_No;
-	@Insert("insert into CHAT_ROOM_MESSAGE values(NULL, #R_N# , #{r_Contents})")
-	public int Insertchat_in(chat_room_in_Dto dto);
-	
 }
