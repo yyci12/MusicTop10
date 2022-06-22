@@ -57,8 +57,17 @@ public class LoginController {
 	}
 
 	@GetMapping("/detail")
-	public String detailform() {
-
+	public String detailform(Model melon,Model bugs,Model genie) {
+		Crawling list = new Crawling();
+		try {
+			genie.addAttribute("genie",list.Crawling_genie());
+			melon.addAttribute("list",list.Crawling());
+			bugs.addAttribute("bugs",list.Crawling_bugs());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return "detail";
 	}
 

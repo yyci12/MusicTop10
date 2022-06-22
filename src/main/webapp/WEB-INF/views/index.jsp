@@ -105,7 +105,7 @@
 								<button id="melon">melon</button>
 								<button id="bugs">bugs</button>
 								<button id="genie">genie</button>
-								<button id="detail" onclick="location.href='detail'">차트 모와보기</button>
+								<button id="detail" onclick="location.href='detail'">차트 모아보기</button>
 							</div>
 							<br> <strong>실시간</strong> <br> <br>
 							<script>
