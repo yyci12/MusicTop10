@@ -57,7 +57,7 @@ public class LoginController {
 	}
 
 	@GetMapping("/detail")
-	public String detailform(Model melon, Model bugs, Model genie) {
+	public String detailform(Model melon, Model bugs, Model genie,Model session) {
 		Crawling list = new Crawling();
 		try {
 			genie.addAttribute("genie", list.Crawling_genie());
@@ -67,6 +67,7 @@ public class LoginController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		session.addAttribute("session", loginsession);
 
 		return "detail";
 	}
