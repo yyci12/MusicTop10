@@ -9,3 +9,11 @@ div .chart{
 .Bottom button {
 	float: left;
 }
+div .TOP{
+	width : 1200px;
+	background-color: #C5B4E3;
+	padding: 15px;
+}
+table {
+	border-spacing: 30px;
+    }
