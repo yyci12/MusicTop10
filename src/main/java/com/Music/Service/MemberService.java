@@ -9,4 +9,6 @@ public interface MemberService {
 	public List<MemberDto> selectList(MemberDto dto);
 	
 	public int insert_Member(MemberDto dto);
+	
+	public int Delete_Member(MemberDto dto);
 }

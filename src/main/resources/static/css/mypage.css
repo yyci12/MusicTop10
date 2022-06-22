@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.page{
+	font-family: 'Gamja Flower', cursive;
+	margin: auto; 
+	width: 60%;
+	text-align:center;
+}
+.mypage_id{
+	margin-top:300px;
+	color: #68A7AD;
+	font-size:100px;
+}
+.page button{
+	margin-top:200px;
+	font-size:40px;
+}

@@ -1,5 +1,7 @@
 @charset "UTF-8";
-
+body{
+	font-family: 'Gamja Flower', cursive;
+}
 *{
 	box-sizing: border-box;
 }

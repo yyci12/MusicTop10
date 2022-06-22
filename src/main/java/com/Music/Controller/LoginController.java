@@ -57,17 +57,17 @@ public class LoginController {
 	}
 
 	@GetMapping("/detail")
-	public String detailform(Model melon,Model bugs,Model genie) {
+	public String detailform(Model melon, Model bugs, Model genie) {
 		Crawling list = new Crawling();
 		try {
-			genie.addAttribute("genie",list.Crawling_genie());
-			melon.addAttribute("list",list.Crawling());
-			bugs.addAttribute("bugs",list.Crawling_bugs());
+			genie.addAttribute("genie", list.Crawling_genie());
+			melon.addAttribute("list", list.Crawling());
+			bugs.addAttribute("bugs", list.Crawling_bugs());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return "detail";
 	}
 
@@ -80,7 +80,17 @@ public class LoginController {
 	public String mypage(Model session) {
 		session.addAttribute("session", loginsession);
 		session.addAttribute("myid", id);
-		return "mypage";
+		if (loginsession == 1) {
+			return "mypage";
+		} else {
+			return "/";
+		}
+	}
+
+	@GetMapping("/Withdrawal")
+	public String Withdrawal() {
+
+		return "/";
 	}
 
 	// go chat page
@@ -114,7 +124,8 @@ public class LoginController {
 	}
 
 	@GetMapping("/go_to_chat_room")
-	public String go_chatR(HttpServletRequest request, Model model, Model session,HttpServletResponse response) throws IOException {
+	public String go_chatR(HttpServletRequest request, Model model, Model session, HttpServletResponse response)
+			throws IOException {
 		if (loginsession == 1) {
 			chat_room_No = request.getParameter("room_no");
 			List<chat_room_Dto> list = cR_service.select_CR(chat_room_No);
@@ -127,8 +138,7 @@ public class LoginController {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>alert('로그인 정보를 확인해주세요.'); history.go(-1);</script>");
-			out.flush(); 
-			
+			out.flush();
 
 			return "chat";
 		}

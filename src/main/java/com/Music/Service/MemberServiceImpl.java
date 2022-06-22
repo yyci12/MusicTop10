@@ -26,5 +26,11 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return mapper.insert_Member(dto);
 	}
+	
+	@Override
+	public int Delete_Member(MemberDto dto) {
+		// TODO Auto-generated method stub
+		return mapper.Delete_Member(dto);
+	}
 
 }

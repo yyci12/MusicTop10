@@ -10,6 +10,9 @@
 
 <link rel="StyleSheet" href="css/header_footer.css" type="text/css">
 <link rel="StyleSheet" href="css/chatt.css" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 
 </head>
 <body>

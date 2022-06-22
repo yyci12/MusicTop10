@@ -9,24 +9,26 @@
 <title>Mypage</title>
 
 <link rel="StyleSheet" href="css/header_footer.css" type="text/css">
-
+<link rel="StyleSheet" href="css/mypage.css" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 
 </head>
 <body>
 <header class="section">
 			<a href="/"><img src="img/logo.png"></a>
 			<div class="header_menu">
-			<c:if test = "${session == 0}">
-			<button onclick = "location.href='/chat'">Chatting</button>
-			<button onclick = "location.href='/sign_up'">Sign In / Sign Up</button>
-			</c:if>
 			<c:if test = "${session == 1}">
 			<button onclick = "location.href='/chat'">Chatting</button>
-			<button onclick = "location.href='/mypage'">Mypage</button>
 			</c:if>
 			</div>
 		</header>
-		<div>${myid}님 어서오세요</div>
+		<div class="page">
+		<div class ="mypage_id">${myid}님 어서오세요</div>
+		<button onclick = "location.href='/Withdrawal'">회원탈퇴</button>
+		</div>
+		
 		
 		
 </body>
