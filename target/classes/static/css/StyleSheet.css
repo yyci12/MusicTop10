@@ -14,6 +14,12 @@ div .TOP{
 	background-color: #C5B4E3;
 	padding: 15px;
 }
-table {
-	border-spacing: 30px;
-    }
+.chart_Table {
+	width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+.chart_Table td{
+	border-bottom: 1px solid #444444;
+    padding: 10px;
+}
