@@ -88,6 +88,7 @@ public class LoginController {
 	public String go_chatR(HttpServletRequest request) {
 		chat_room_No = request.getParameter("room_no");
 		cR_service.select_CR(chat_room_No);
+		System.out.print(chat_room_No);
 		return "chat_room";
 	}
 	
