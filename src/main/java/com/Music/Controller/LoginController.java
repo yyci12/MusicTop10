@@ -80,8 +80,7 @@ public class LoginController {
 	public String mypage(Model session) {
 		session.addAttribute("session", loginsession);
 		session.addAttribute("myid", id);
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 		if (loginsession == 1) {
 			return "mypage";
 		} else {
@@ -92,26 +91,13 @@ public class LoginController {
 	@GetMapping("/Withdrawal")
 	public String Withdrawal() {
 
-=======
-=======
->>>>>>> Stashed changes
+
 		if(loginsession == 1) {
 		return "mypage";
 		}else {
 			return "/";
 		}
 	}
-	@GetMapping("/Withdrawal")
-	public String Withdrawal() {
-		
-		member_service.Delete_Member();
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-		return "/";
-	}
-	
 
 	// go chat page
 	@GetMapping("/chat")
