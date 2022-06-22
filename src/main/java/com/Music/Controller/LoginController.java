@@ -72,10 +72,7 @@ public class LoginController {
 		return "detail";
 	}
 
-	@GetMapping("/inputform")
-	public String inputform() {
-		return "inputform";
-	}
+
 
 	@GetMapping("/mypage")
 	public String mypage(Model session) {
@@ -157,6 +154,13 @@ public class LoginController {
 	public String sign_up() {
 
 		return "sign_up";
+	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		loginsession = 0;
+		id = null; 
+		return "redirect:chat";
 	}
 
 	@PostMapping("/sign_up_form")
