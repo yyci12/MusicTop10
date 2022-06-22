@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,28 +9,35 @@
 
 <link rel="StyleSheet" href="css/header_footer.css" type="text/css">
 <link rel="StyleSheet" href="css/chat_room.css" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 </head>
 
 
 <body class="body_container">
+	<header class="section">
+		<a href="/"><img src="img/logo.png"></a>
+		<div class="header_menu">
+			<button onclick="location.href='/chat'">Chatting</button>
+			<button onclick="location.href='/mypage'">Mypage</button>
+			<button onclick="location.href='/login'">Login</button>
+			<button onclick="location.href='/sign_up'">Sign Up</button>
+		</div>
+	</header>
 	<div class="chatroompage">
-		<header class="section">
-			<div class="header_section">
-				<a href="/">메인</a>
-				<div href="/">채팅방</div>
-				<div>
-		</header>
+
 
 
 		<div class="myfavoriteArtist_container">
-			<div class="myfavoriteArtist_button_con">hi</div>
+			<div class="myfavoriteArtist_button_con">채팅방에 오신걸 환영합니다.</div>
 		</div>
 		<div class="chat_room_container">
 			<table border="1">
-				<col width="50">
-				<col width="200">
-				<col width="150">
 				<col width="100">
+				<col width="200">
+				<col width="400">
+				<col width="300">
 				<tr>
 					<th>번호</th>
 					<th>채팅방 입장</th>
@@ -48,10 +55,11 @@
 							<tr>
 								<td>${dto.cRoom_No }</td>
 								<!-- =${dto.cRoom_No } -->
-								<td><button onclick = "location.href='go_to_chat_room?room_no=${dto.cRoom_No}'">입장</button></td>
+								<td><button
+										onclick="location.href='go_to_chat_room?room_no=${dto.cRoom_No}'">입장</button></td>
 								<td>${dto.artist_Name }</td>
 								<td>${dto.r_Contents }</td>
-								
+
 							</tr>
 						</c:forEach>
 					</c:otherwise>

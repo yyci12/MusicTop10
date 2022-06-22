@@ -92,6 +92,8 @@ public class LoginController {
 		List <chat_room_Dto> list = cR_service.select_CR(chat_room_No);
 		System.out.print(chat_room_No);
 		model.addAttribute("roomlist",list);
+		
+		
 		return "chat_room";
 	}
 	

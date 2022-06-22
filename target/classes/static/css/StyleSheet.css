@@ -4,29 +4,63 @@ a{
 	text-decoration: none;
 	color: black;
 }
+div .page{
+	
+	margin:auto;
+	width:60%;
+}
 
 div .chart{
+	
 	margin: auto; 
+	margin-top:20px;
 	width: 60%;
 	text-align: center;
 }
-.Bottom button {
+.chart_Bottom button {
 	float: left;
 }
 div .TOP{
 	width : 1200px;
-	background-color: #C5B4E3;
+	background-color: #99C4C8;
 	padding: 15px;
+	color:white;
 }
 .chart_Table {
     border-top: 1px solid #444444;
     border-collapse: collapse;
 }
-.Bottom td{
+.chart_Bottom td{
 	border-bottom: 1px solid #444444;
     padding: 10px;
 }
-.Bottom img{
+.chart_Bottom img{
 	width: 120px;
 	height: 120px;
+}
+.chart_Bottom{
+	margin: auto; 
+	width: 100%;
+	text-align: center;
+	display:flex;
+}
+.musiccom{
+	float:right;
+	text-align: center;
+}
+.chart_bottom_left{
+	width:70%;
+}
+.chart_bottom_right{
+	margin-left:40px;
+	margin-top:50px;
+	width: 20%;
+}
+.temp{
+	margin:auto;
+	display:block;
+}
+.temp img{
+	width:100%;
+	height:100%;
 }

@@ -40,6 +40,12 @@
 	<div class="page">
 		<header class="section">
 			<a href="/"><img src="img/logo.png"></a>
+			<div class="header_menu">
+			<button onclick = "location.href='/chat'">Chatting</button>
+			<button onclick = "location.href='/mypage'">Mypage</button>
+			<button onclick = "location.href='/login'">Login</button>
+			<button onclick = "location.href='/sign_up'">Sign Up</button>
+			</div>
 		</header>
 
 		<div class="chart">
@@ -84,128 +90,134 @@
 
 			</div>
 
-			<div class="chart Bottom">
-				<br>
-				<button id="melon">melon</button>
-				<button id="bugs">bugs</button>
-				<button id="genie">genie</button>
-				<header class="sectionTitle">
-					<div class="info">
-						<h1>곡 차트</h1>
-						<strong>실시간</strong>
-						<br><br>
-								<script>
-									const date = new Date();
-									document.write(date.toLocaleString('ko-kr'));
-								</script>
-						<table class="chart_Table_melon">
-							<col width="50">
-							<col width="200">
-							<col width="200">
-							<col width="300">
-							<col width="100">
-							<c:choose>
-								<c:when test="${empty list }">
-									<tr>
-										<td colspan="5">----차트 불러오기 실패----</td>
-									</tr>
-								</c:when>
-								<c:otherwise>
-									<c:forEach begin="0" end="9" items="${list }" var="dto">
-										<tr>
-											<td>${dto.rank }</td>
-											<td><a
-												href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
-													<img src="${dto.img }">
-											</a><br> ${dto.title }</td>
-											<td><a
-												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
-											<td><a
-												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
-											<td><a
-												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
-										</tr>
-									</c:forEach>
-								</c:otherwise>
-							</c:choose>
-						</table>
+			<div class="chart_Bottom">
+				<div class="chart_bottom_left">
+					<br>
 
-						<table class="chart_Table_bugs">
-							<col width="50">
-							<col width="200">
-							<col width="200">
-							<col width="300">
-							<col width="100">
-							<c:choose>
-								<c:when test="${empty bugs }">
-									<tr>
-										<td colspan="5">----차트 불러오기 실패----</td>
-									</tr>
-								</c:when>
-								<c:otherwise>
-									<c:forEach begin="0" end="9" items="${bugs }" var="dto">
+					<div class="sectionTitle">
+						<div class="info">
+							<h1>곡 차트</h1>
+							<div class="musiccom">
+								<button id="melon">melon</button>
+								<button id="bugs">bugs</button>
+								<button id="genie">genie</button>
+							</div>
+							<br> <strong>실시간</strong> <br> <br>
+							<script>
+								const date = new Date();
+								document.write(date.toLocaleString('ko-kr'));
+							</script>
+							<table class="chart_Table_melon">
+								<col width="100">
+								<col width="250">
+								<col width="250">
+								<col width="350">
+								<col width="150">
+								<c:choose>
+									<c:when test="${empty list }">
 										<tr>
-											<td>${dto.rank }</td>
-											<td><a
-												href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
-													<img src="${dto.img }">
-											</a><br> ${dto.title }</td>
-											<td><a
-												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
-											<td><a
-												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
-											<td><a
-												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
+											<td colspan="5">----차트 불러오기 실패----</td>
 										</tr>
-									</c:forEach>
-								</c:otherwise>
-							</c:choose>
-						</table>
+									</c:when>
+									<c:otherwise>
+										<c:forEach begin="0" end="9" items="${list }" var="dto">
+											<tr>
+												<td>${dto.rank }</td>
+												<td><a
+													href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
+														<img src="${dto.img }">
+												</a><br> ${dto.title }</td>
+												<td><a
+													href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
+												<td><a
+													href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
+												<td><a
+													href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
+											</tr>
+										</c:forEach>
+									</c:otherwise>
+								</c:choose>
+							</table>
 
-						<table class="chart_Table_genie">
-							<col width="50">
-							<col width="200">
-							<col width="200">
-							<col width="300">
-							<col width="100">
-							<c:choose>
-								<c:when test="${empty genie }">
-									<tr>
-										<td colspan="5">----차트 불러오기 실패----</td>
-									</tr>
-								</c:when>
-								<c:otherwise>
-									<c:forEach begin="0" end="9" items="${genie }" var="dto">
+							<table class="chart_Table_bugs">
+								<col width="100">
+								<col width="250">
+								<col width="250">
+								<col width="350">
+								<col width="150">
+								<c:choose>
+									<c:when test="${empty bugs }">
 										<tr>
-											<td>${dto.rank }</td>
-											<td><a
-												href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
-													<img src="${dto.img }">
-											</a><br> ${dto.title }</td>
-											<td><a
-												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
-											<td><a
-												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
-											<td><a
-												href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
+											<td colspan="5">----차트 불러오기 실패----</td>
 										</tr>
-									</c:forEach>
-								</c:otherwise>
-							</c:choose>
-						</table>
+									</c:when>
+									<c:otherwise>
+										<c:forEach begin="0" end="9" items="${bugs }" var="dto">
+											<tr>
+												<td>${dto.rank }</td>
+												<td><a
+													href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
+														<img src="${dto.img }">
+												</a><br> ${dto.title }</td>
+												<td><a
+													href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
+												<td><a
+													href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
+												<td><a
+													href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
+											</tr>
+										</c:forEach>
+									</c:otherwise>
+								</c:choose>
+							</table>
+
+							<table class="chart_Table_genie">
+								<col width="100">
+								<col width="250">
+								<col width="250">
+								<col width="350">
+								<col width="150">
+								<c:choose>
+									<c:when test="${empty genie }">
+										<tr>
+											<td colspan="5">----차트 불러오기 실패----</td>
+										</tr>
+									</c:when>
+									<c:otherwise>
+										<c:forEach begin="0" end="9" items="${genie }" var="dto">
+											<tr>
+												<td>${dto.rank }</td>
+												<td><a
+													href="https://search.naver.com/search.naver? where=nexearch&sm=top_hty&fbm=0&ie=utf8&query= ${dto.artist }+${dto.title }">
+														<img src="${dto.img }">
+												</a><br> ${dto.title }</td>
+												<td><a
+													href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }">${dto.artist }</a></td>
+												<td><a
+													href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.album}">${dto.album }</a></td>
+												<td><a
+													href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${dto.artist }+${dto.title }">&#128441;</a></td>
+											</tr>
+										</c:forEach>
+									</c:otherwise>
+								</c:choose>
+							</table>
+						</div>
 					</div>
-				</header>
+				</div>
+				<div class="chart_bottom_right">
+					<div class="temp">
+						<img src="img/iu_event.jpg">
+					</div>
+					<div class="temp">
+						<img src="img/event.jpg">
+					</div>
+					<div class="temp">
+						<img src="img/im_event.jpg">
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="temp">
-			<li><a href="/mypage">마이페이지</a></li>
-			<li><a href="/chat">채팅방</a></li>
-			<li><a href="/login">로그인</a></li>
-			<li><a href="/sign_up">회원가입</a></li>
-		</div>
-
-
-
 		<footer class="section"> </footer>
 	</div>
 </body>
