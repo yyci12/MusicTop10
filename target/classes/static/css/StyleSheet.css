@@ -15,11 +15,14 @@ div .TOP{
 	padding: 15px;
 }
 .chart_Table {
-	width: 100%;
     border-top: 1px solid #444444;
     border-collapse: collapse;
 }
-.chart_Table td{
+.Bottom td{
 	border-bottom: 1px solid #444444;
     padding: 10px;
+}
+.Bottom img{
+	width: 120px;
+	height: 120px;
 }

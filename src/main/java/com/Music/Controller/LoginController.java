@@ -33,13 +33,14 @@ public class LoginController {
 	private chat_room_Service cR_service;
 	
 	@GetMapping("/")
-	public String root(Model model,Model model2) {
+	public String root(Model melon,Model banner,Model bugs,Model genie) {
 		Crawling list = new Crawling();
 		
 		try {
-			System.out.println(list.Crawling2());
-			model2.addAttribute("banner",list.Crawling2());
-			model.addAttribute("list",list.Crawling());
+			genie.addAttribute("genie",list.Crawling_genie());
+			banner.addAttribute("banner",list.Crawling2());
+			melon.addAttribute("list",list.Crawling());
+			bugs.addAttribute("bugs",list.Crawling_bugs());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
