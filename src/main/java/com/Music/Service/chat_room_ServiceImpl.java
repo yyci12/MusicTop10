@@ -29,6 +29,12 @@ public class chat_room_ServiceImpl implements chat_room_Service{
 	}
 	
 	@Override
+	public String select_CR(String chat_room_No) {
+		// TODO Auto-generated method stub
+		return chat_room_mapper.select_CR(chat_room_No);
+	}
+	
+	@Override
 	public List<chat_room_in_Dto> select_chatList(){
 		// TODO Auto-generated method stub
 		return chat_room_mapper.select_chatList();

@@ -21,8 +21,8 @@ public interface chat_room_Mapper {
 	@Insert("insert into CHAT_ROOM values(NULL, #{artist_Name}, #{r_Contents})")
 	public int Insert(chat_room_Dto dto);
 	
-	@Select("SELECT * FROM CHAT_ROOM") 
-	List <chat_room_Dto> select_CRList();
+	@Select("SELECT * FROM CHAT_ROOM WHERE #{chat_room_No}")
+	String select_CR(String chat_room_No);
 	
 	
 	

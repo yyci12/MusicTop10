@@ -86,6 +86,7 @@ public class LoginController {
 	@GetMapping("/go_to_chat_room")
 	public String go_chatR(HttpServletRequest request) {
 		chat_room_No = request.getParameter("room_no");
+		cR_service.select_CR(chat_room_No);
 		return "chat_room";
 	}
 	
