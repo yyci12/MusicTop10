@@ -96,6 +96,12 @@ public class LoginController {
 		return mv;
 	}
 	
+	@GetMapping("/logiin")
+	public String login() {
+		
+		return "login";
+	}
+	
 	
 	@GetMapping("/input")
 	public String input(Model model,MemberDto dto) {
