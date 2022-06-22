@@ -53,7 +53,7 @@
 				<table class="TOP_Table">
 					<col width="200">
 					<col width="200">
-					<col width="300">
+					<col width="200">
 					<col width="200">
 					<col width="200">
 					<col width="200">

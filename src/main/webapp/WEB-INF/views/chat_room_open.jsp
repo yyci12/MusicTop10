@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>채팅방만들기</title>
 
 <link rel="StyleSheet" href="css/header_footer.css" type="text/css">
 <link rel="StyleSheet" href="css/chat_room_open.css" type="text/css">

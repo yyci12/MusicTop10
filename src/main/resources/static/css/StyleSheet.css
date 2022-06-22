@@ -2,7 +2,7 @@
 
 a{
 	text-decoration: none;
-	color: black;
+	color:black;
 }
 div .page{
 	
@@ -22,9 +22,12 @@ div .chart{
 }
 div .TOP{
 	width : 1200px;
-	background-color: #99C4C8;
+	background-color: #8abbbf;
 	padding: 15px;
-	color:white;
+}
+.TOP_Table td a{
+	color:#ffffff;
+	text-decoration: none;
 }
 .chart_Table {
     border-top: 1px solid #444444;
