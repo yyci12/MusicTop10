@@ -33,7 +33,7 @@
 			<div class="myfavoriteArtist_button_con">채팅방에 오신걸 환영합니다.</div>
 		</div>
 		<div class="chat_room_container">
-			<table border="1">
+			<table>
 				<col width="100">
 				<col width="200">
 				<col width="400">
@@ -65,7 +65,7 @@
 					</c:otherwise>
 				</c:choose>
 				<tr>
-					<td colspan="4"><input type="button" value="채팅방만들기"
+					<td class="chat_m_btn" colspan="4"><input type="button" value="채팅방만들기"
 						onclick="location.href='chat_room_open'"></td>
 				</tr>
 			</table>
