@@ -224,7 +224,7 @@
 				</div>
 			</div>
 		</div>
-		<footer class="section"> </footer>
+		<footer class="section"><br> <br><br><br><br><br></footer>
 	</div>
 </body>
 </html>
