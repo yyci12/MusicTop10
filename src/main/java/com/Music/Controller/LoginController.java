@@ -61,6 +61,8 @@ public class LoginController {
 	@GetMapping("/chat")
 	public String chatpage(Model model) {
 		List<chat_room_Dto> list = cR_service.select_CRList();
+		System.out.print(list);
+		
 		model.addAttribute("list_1",list);
 		return "chat";
 	}
@@ -85,10 +87,11 @@ public class LoginController {
 	}
 	
 	@GetMapping("/go_to_chat_room")
-	public String go_chatR(HttpServletRequest request) {
+	public String go_chatR(HttpServletRequest request, Model model) {
 		chat_room_No = request.getParameter("room_no");
-		cR_service.select_CR(chat_room_No);
+		List <chat_room_Dto> list = cR_service.select_CR(chat_room_No);
 		System.out.print(chat_room_No);
+		model.addAttribute("roomlist",list);
 		return "chat_room";
 	}
 	

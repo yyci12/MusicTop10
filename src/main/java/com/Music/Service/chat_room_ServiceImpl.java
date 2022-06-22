@@ -2,6 +2,7 @@ package com.Music.Service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,9 +30,9 @@ public class chat_room_ServiceImpl implements chat_room_Service{
 	}
 	
 	@Override
-	public String select_CR(String chat_room_No) {
+	public List <chat_room_Dto> select_CR(@Param("croom_no") String croom_no) {
 		// TODO Auto-generated method stub
-		return chat_room_mapper.select_CR(chat_room_No);
+		return chat_room_mapper.select_CR(croom_no);
 	}
 	
 	@Override
