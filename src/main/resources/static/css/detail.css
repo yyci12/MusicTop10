@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+a{
+	text-decoration: none;
+	color:black;
+}
+div .page{
+	
+	margin:auto;
+	width:60%;
+}
+
+div .chart{
+	
+	margin: auto; 
+	margin-top:20px;
+	width: 60%;
+	text-align: center;
+}
+.chart_Bottom{
+		
+}
+.chart_Bottom button {
+	float: left;
+}
+div .TOP{
+	width : 1200px;
+	background-color: #8abbbf;
+	padding: 15px;
+}
+.TOP_Table td a{
+	color:#ffffff;
+	text-decoration: none;
+}
+.chart_Table {
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+.chart_Bottom td{
+	border-bottom: 1px solid #444444;
+    padding: 10px;
+}
+.chart_Bottom img{
+	width: 120px;
+	height: 120px;
+}
+.chart_Bottom{
+	margin: auto; 
+	width: 100%;
+	text-align: center;
+	display:flex;
+}
+.musiccom{
+	float:right;
+	text-align: center;
+}
+.jstl_chart{
+	display: flex;
+}
+.melon{
+
+}
+.bugs{
+
+}
+.genie{
+
+}
+.temp{
+	margin:auto;
+	display:block;
+}

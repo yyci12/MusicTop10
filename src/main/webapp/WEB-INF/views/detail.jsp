@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="StyleSheet" href="css/StyleSheet.css" type="text/css">
+<link rel="StyleSheet" href="css/detail.css" type="text/css">
 <link rel="StyleSheet" href="css/header_footer.css" type="text/css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -27,39 +27,39 @@
 		<header class="section">
 			<a href="/"><img src="img/logo.png"></a>
 			<div class="header_menu">
-			<c:if test = "${session == 0}">
-			<button onclick = "location.href='/chat'">Chatting</button>
-			<button onclick = "location.href='/sign_up'">Sign In / Sign Up</button>
-			</c:if>
-			<c:if test = "${session == 1}">
-			<button onclick = "location.href='/chat'">Chatting</button>
-			<button onclick = "location.href='/mypage'">Mypage</button>
-			<button onclick = "location.href='/logout'">logout</button>
-			</c:if>
+				<c:if test="${session == 0}">
+					<button onclick="location.href='/chat'">Chatting</button>
+					<button onclick="location.href='/sign_up'">Sign In / Sign
+						Up</button>
+				</c:if>
+				<c:if test="${session == 1}">
+					<button onclick="location.href='/chat'">Chatting</button>
+					<button onclick="location.href='/mypage'">Mypage</button>
+					<button onclick="location.href='/logout'">logout</button>
+				</c:if>
 			</div>
 		</header>
 		<div class="chart_Bottom">
 			<div class="chart">
-				<div class="chart">
-					<div class="chart_bottom_left">
-						<br>
-						<div class="sectionTitle">
-							<div class="info">
-								<h1>차트 모아보기</h1>
-								<div class="musiccom"></div>
-								<script>
-									const date = new Date();
-									document
-											.write(date.toLocaleString('ko-kr'));
-								</script>
+				<div class="chart_bottom_left">
+					<br>
+					<div class="sectionTitle">
+						<div class="info">
+							<h1>차트 모아보기</h1>
+							<div class="musiccom"></div>
+							<script>
+								const date = new Date();
+								document.write(date.toLocaleString('ko-kr'));
+							</script>
+							<div class="jstl_chart">
 								<div class="melon">
 									<table class="chart_Table_melon">
 										<caption>
 											<b>Melon</b>
 										</caption>
 										<col width="100">
-										<col width="250">
-										<col width="250">
+										<col width="300">
+										<col width="300">
 										<col width="350">
 										<col width="150">
 										<c:choose>
@@ -96,8 +96,8 @@
 											<b>벅스</b>
 										</caption>
 										<col width="100">
-										<col width="250">
-										<col width="250">
+										<col width="300">
+										<col width="300">
 										<col width="350">
 										<col width="150">
 										<c:choose>
@@ -134,8 +134,8 @@
 											<b>지니</b>
 										</caption>
 										<col width="100">
-										<col width="250">
-										<col width="250">
+										<col width="300">
+										<col width="300">
 										<col width="350">
 										<col width="150">
 										<c:choose>
@@ -173,6 +173,5 @@
 			</div>
 			<footer class="section"> </footer>
 		</div>
-	</div>
 </body>
 </html>

@@ -108,7 +108,7 @@
 								<button id="genie">genie</button>
 								<button id="detail" onclick="location.href='detail'">차트 모아보기</button>
 							</div>
-							<br> <strong>실시간</strong> <br> <br>
+							<br><br><strong>실시간</strong> <br> <br>
 							<script>
 								const date = new Date();
 								document.write(date.toLocaleString('ko-kr'));
