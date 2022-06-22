@@ -48,7 +48,11 @@ public class LoginController {
 		
 		return "index";
 	}
-	
+	@GetMapping("/detail")
+	public String detailform() {
+		
+		return "detail";
+	}
 	@GetMapping("/inputform")
 	public String inputform() {
 		return "inputform";
