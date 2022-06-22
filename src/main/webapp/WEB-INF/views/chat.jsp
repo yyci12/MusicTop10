@@ -17,14 +17,18 @@
 
 <body class="body_container">
 	<header class="section">
-		<a href="/"><img src="img/logo.png"></a>
-		<div class="header_menu">
-			<button onclick="location.href='/chat'">Chatting</button>
-			<button onclick="location.href='/mypage'">Mypage</button>
-			<button onclick="location.href='/login'">Login</button>
-			<button onclick="location.href='/sign_up'">Sign Up</button>
-		</div>
-	</header>
+			<a href="/"><img src="img/logo.png"></a>
+			<div class="header_menu">
+			<c:if test = "${session == 0}">
+			<button onclick = "location.href='/chat'">Chatting</button>
+			<button onclick = "location.href='/sign_up'">Sign In / Sign Up</button>
+			</c:if>
+			<c:if test = "${session == 1}">
+			<button onclick = "location.href='/chat'">Chatting</button>
+			<button onclick = "location.href='/mypage'">Mypage</button>
+			</c:if>
+			</div>
+		</header>
 	<div class="chatroompage">
 
 

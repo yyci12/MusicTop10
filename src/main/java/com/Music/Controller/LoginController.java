@@ -1,9 +1,12 @@
 package com.Music.Controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +28,7 @@ import com.Music.Service.chat_room_Service;
 public class LoginController {
 
 	private int loginsession = 0;
+	private String id = null;
 
 	public static String chat_room_No;
 	@Autowired
@@ -64,15 +68,17 @@ public class LoginController {
 	}
 
 	@GetMapping("/mypage")
-	public String mypage() {
+	public String mypage(Model session) {
+		session.addAttribute("session", loginsession);
+		session.addAttribute("myid", id);
 		return "mypage";
 	}
 
 	// go chat page
 	@GetMapping("/chat")
-	public String chatpage(Model model) {
+	public String chatpage(Model model, Model session) {
 		List<chat_room_Dto> list = cR_service.select_CRList();
-		System.out.print(list);
+		session.addAttribute("session", loginsession);
 
 		model.addAttribute("list_1", list);
 		return "chat";
@@ -87,10 +93,10 @@ public class LoginController {
 
 	// chat room make form get
 	@GetMapping("chat_room_make")
-	public String chatR_insert(chat_room_Dto dto) {
+	public String chatR_insert(chat_room_Dto dto, Model session) {
 		int res = 0;
 		res = cR_service.Insert(dto);
-
+		session.addAttribute("session", loginsession);
 		if (res > 0) {
 			return "redirect:chat";
 		} else {
@@ -99,20 +105,24 @@ public class LoginController {
 	}
 
 	@GetMapping("/go_to_chat_room")
-	public String go_chatR(HttpServletRequest request, Model model) {
-		chat_room_No = request.getParameter("room_no");
-		List<chat_room_Dto> list = cR_service.select_CR(chat_room_No);
-		System.out.print(chat_room_No);
-		model.addAttribute("roomlist", list);
+	public String go_chatR(HttpServletRequest request, Model model, Model session,HttpServletResponse response) throws IOException {
+		if (loginsession == 1) {
+			chat_room_No = request.getParameter("room_no");
+			List<chat_room_Dto> list = cR_service.select_CR(chat_room_No);
+			System.out.print(chat_room_No);
+			model.addAttribute("roomlist", list);
+			session.addAttribute("myid", id);
+			session.addAttribute("session", loginsession);
+			return "chat_room";
+		} else {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('로그인 정보를 확인해주세요.'); history.go(-1);</script>");
+			out.flush(); 
+			
 
-		return "chat_room";
-	}
-
-	@GetMapping("/mychatt")
-	public ModelAndView chatt() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("chat_room");
-		return mv;
+			return "chat";
+		}
 	}
 
 	@GetMapping("/sign_up")
@@ -122,9 +132,10 @@ public class LoginController {
 	}
 
 	@PostMapping("/sign_up_form")
-	public String sign_up_form(MemberDto dto) {
+	public String sign_up_form(MemberDto dto, Model session) {
 		int res = 0;
 		res = member_service.insert_Member(dto);
+		session.addAttribute("session", loginsession);
 		System.out.println("sign_up_log");
 		if (res > 0) {
 			System.out.println(dto);
@@ -136,10 +147,16 @@ public class LoginController {
 	}
 
 	@PostMapping("/login_form")
-	public String login_form(MemberDto dto) {
-		System.out.println(dto);
+	public String login_form(MemberDto dto, Model session) {
+		session.addAttribute("session", loginsession);
 		List<MemberDto> M_list = member_service.selectList(dto);
-		if (M_list == null) {
+		if (M_list != null) {
+			loginsession = 1;
+			MemberDto str = M_list.get(0);
+			String[] strtos = str.toString().split(", ");
+			session.addAttribute("session", loginsession);
+			id = strtos[1];
+
 			return "redirect:/";
 		} else {
 			return "redirect:/";

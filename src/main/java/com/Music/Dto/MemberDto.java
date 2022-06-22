@@ -43,7 +43,7 @@ public class MemberDto {
 	}
 	
 	public String toString(){
-		String res= Integer.toString(user_No)+"   "+ user_Id+"   "+user_Pw+"   "+user_Em ;
+		String res= Integer.toString(user_No)+", "+ user_Id+", "+user_Pw+", "+user_Em ;
 		return res;
 	}
 	

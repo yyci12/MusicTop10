@@ -14,10 +14,17 @@
 <body class="body_container">
 	<div class="chatopenpage">
 		<header class="section">
-			<div class="header_section">
-				<a href="/">메인</a>
-				<div>채팅방 만들기</div>
-				<div>
+			<a href="/"><img src="img/logo.png"></a>
+			<div class="header_menu">
+			<c:if test = "${session == 0}">
+			<button onclick = "location.href='/chat'">Chatting</button>
+			<button onclick = "location.href='/sign_up'">Sign In / Sign Up</button>
+			</c:if>
+			<c:if test = "${session == 1}">
+			<button onclick = "location.href='/chat'">Chatting</button>
+			<button onclick = "location.href='/mypage'">Mypage</button>
+			</c:if>
+			</div>
 		</header>
 
 
